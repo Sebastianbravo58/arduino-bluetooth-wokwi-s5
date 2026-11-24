@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Sebastian David Bravo Gomez",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 120, "left": 80, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led_actuador",
+      "top": 20,
+      "left": 320,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res_actuador",
+      "top": 95,
+      "left": 250,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_estado",
+      "top": 140,
+      "left": 320,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res_estado",
+      "top": 215,
+      "left": 250,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "uno:13", "res_actuador:1", "red", [ "v0" ] ],
+    [ "res_actuador:2", "led_actuador:A", "red", [ "v0" ] ],
+    [ "led_actuador:C", "uno:GND.2", "black", [ "v0" ] ],
+    [ "uno:12", "res_estado:1", "green", [ "v0" ] ],
+    [ "res_estado:2", "led_estado:A", "green", [ "v0" ] ],
+    [ "led_estado:C", "uno:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
